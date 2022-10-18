@@ -1,0 +1,93 @@
+<body>
+
+    <div>
+      <label>Square this number:
+        <input type="number" id="square-input" size="2">
+      </label>
+      <button id="square-button">Calculate</button>
+    </div>
+    
+    <div>
+      <label>Half this number:
+        <input type="number" id="half-input" size="2">
+      </label>
+      <button id="half-button">Calculate</button>
+    </div>
+    
+    <div>
+      <label>
+        Fraction:
+        <input type="number" id="percent1-input" size="2">
+      </label>
+      <label>
+        Whole:
+        <input type="number" id="percent2-input" size="2">
+      </label>
+      <button id="percent-button">Calculate</button>
+    </div>
+    
+    <div>
+      <label>
+        Integer:
+        <input type="number" id="int-input" size="2">
+      </label>
+      <button id="int-button">Calculate</button>
+    </div>
+    
+    <div>
+      <label>Calculate area of circle with radius:
+        <input type="number" id="area-input" size="2">
+      </label>
+      <button id="area-button">Calculate</button> 
+    </div>
+    
+    <div id="solution"></div>
+    
+    
+    <script>
+    
+      function squareNumber(num) {
+          var squaredNumber = num * num;
+          document.getElementById("solution").innerHTML = 'The result of squaring the number ' + num + ' is ' + squaredNumber;
+      }
+      function half(num) {
+        var  numer = num / 2;
+        document.getElementById("solution").innerHTML = 'The result of halfing  the number ' + num + ' is ' + numer;
+      }
+      function fraction(whole, fraction) {
+        var result = whole / fraction;
+        document.getElementById("solution").innerHTML = 'The result of whole and fraction  the number ' +  whole + 'and' +  fraction +  ' is ' + result;
+
+      }
+
+      function radius(rad) {
+        var result = 3.14 * rad * rad;
+        document.getElementById("solution").innerHTML = 'The result of radius ' +  rad + ' is ' + result;
+
+      }
+      var squareButton = document.getElementById("square-button");
+      squareButton.addEventListener("click", function() {
+        var num = document.getElementById("square-input").value;
+        squareNumber(num);
+      });
+      var halfButton = document.getElementById("half-button");
+      halfButton.addEventListener("click", function() {
+        var num = document.getElementById("half-input").value;
+        half(num);
+      });
+      var fractionBtn = document.getElementById("percent-button");
+      fractionBtn.addEventListener("click", function() {
+        var frac = document.getElementById("percent1-input").value;
+        var whole = document.getElementById("percent2-input").value;
+        fraction(whole, frac);
+      });
+      var radBtn = document.getElementById("area-button");
+      radBtn.addEventListener("click", function() {
+        var num = document.getElementById("area-input").value;
+        radius(num);
+      });
+
+    </script>
+    
+    
+    </body>
